@@ -91,6 +91,13 @@ const actions = {
     // TODO
     console.warn('updateDisplaySet: ', direction);
   },
+  annotateImage: ({ viewports }) => {
+    console.warn('AnnotateImage test');
+    const toolName = 'Brush';
+    const apiTool = cornerstoneTools[`${toolName}Tool`];
+    cornerstoneTools.addTool(apiTool);
+    cornerstoneTools.setToolActive(toolName, { mouseButtonMask: 1 });
+  },
   clearAnnotations: ({ viewports }) => {
     const element = _getActiveViewportEnabledElement(
       viewports.viewportSpecificData,
@@ -212,6 +219,11 @@ const definitions = {
   },
   clearAnnotations: {
     commandFn: actions.clearAnnotations,
+    storeContexts: ['viewports'],
+    options: {},
+  },
+  annotateImage: {
+    commandFn: actions.annotateImage,
     storeContexts: ['viewports'],
     options: {},
   },

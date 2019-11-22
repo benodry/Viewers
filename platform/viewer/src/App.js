@@ -21,6 +21,13 @@ import initCornerstoneTools from './initCornerstoneTools.js';
 import { GenericViewerCommands, MeasurementsPanel } from './appExtensions';
 import OHIFCornerstoneExtension from '@ohif/extension-cornerstone';
 import OHIFStandaloneViewer from './OHIFStandaloneViewer';
+//import OHIFVTKExtension from '@ohif/extension-vtk';
+
+// bodry: Importing the segentation plugin
+//import OHIFSegmentationExtension from 'ohif-segmentation-plugin';
+//import OHIFDicomPDFExtension from '@ohif/extension-dicom-pdf';
+// End of import for segmentation
+
 import { OidcProvider } from 'redux-oidc';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
@@ -177,6 +184,8 @@ function _initExtensions(extensions, hotkeys) {
     GenericViewerCommands,
     MeasurementsPanel,
     OHIFCornerstoneExtension,
+    // OHIFSegmentationExtension,
+    //OHIFDicomPDFExtension
   ];
   const mergedExtensions = defaultExtensions.concat(extensions);
   extensionManager.registerExtensions(mergedExtensions);

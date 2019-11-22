@@ -186,6 +186,14 @@ const definitions = [
         type: TOOLBAR_BUTTON_TYPES.COMMAND,
         commandName: 'clearAnnotations',
       },
+      {
+        id: 'AnnImg',
+        label: 'Annotate Img',
+        icon: 'user',
+        //
+        type: TOOLBAR_BUTTON_TYPES.COMMAND,
+        commandName: 'annotateImage',
+      },
     ],
   },
 ];
